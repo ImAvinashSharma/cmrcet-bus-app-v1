@@ -39,11 +39,12 @@ export default function BussRoute() {
         ];
         setBninfo(binfo);
       } else {
+        setData("");
         setError1("Error Buss No does not exist");
       }
     } else {
-      setError1("Error Enter a Valid Number");
       setData(null);
+      setError1("Error Enter a Valid Number");
     }
   }
   return (
