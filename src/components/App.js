@@ -1,5 +1,4 @@
 import Signup from "./Signup";
-import Home from "./Home";
 import BusRoute from "./BusRoute";
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -17,7 +16,6 @@ function App() {
             <Switch>
               <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
-              <PrivateRoute path="/home" component={Home} />
               <PrivateRoute path="/bus-route" component={BusRoute} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />

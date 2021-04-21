@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import bussData from "./busNo.json";
 import { Button, Alert, Form, Container, Card } from "react-bootstrap";
+import Header from "./Header";
 
 export default function BussRoute() {
   const [error1, setError1] = useState("");
@@ -19,18 +20,22 @@ export default function BussRoute() {
     if (isNumeric(bn)) {
       if (bn <= 61) {
         const binfo = [
-          "Route :: ",
+          "Route  ➡️ ",
           data[bn].Route,
           <br />,
-          "Vehicle No :: " + data[bn].VehicleNo,
+          "Vehicle No ➡️ " + data[bn].VehicleNo,
           <br />,
-          "Time :: " + data[bn].Time + " AM",
+          "Time ➡️ " + data[bn].Time + " AM",
           <br />,
-          "Bus Incharge :: " + data[bn].BusIncharge,
+          "Bus Incharge ➡️ " + data[bn].BusIncharge,
           <br />,
-          "Bus Incharge :: " + data[bn].BusInchargeCellNo,
+          "Bus Incharge Cell No. ➡️ " + data[bn].BusInchargeCellNo,
           <br />,
-          "Capacity :: " + data[bn].Cpty
+          "Driver Name ➡️ " + data[bn].DriverName,
+          <br />,
+          "Driver Cell No. ➡️ " + data[bn].DriverCellNo,
+          <br />,
+          "Capacity ➡️ " + data[bn].Cpty
         ];
         setBninfo(binfo);
       } else {
@@ -42,31 +47,34 @@ export default function BussRoute() {
     }
   }
   return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Card>
-          <Card.Body>
-            <div className="d-flex flex-column align-items-center justify-content-center">
-              <Form onSubmit={handleSubmit}>
-                <Form.Group id="text">
-                  <Form.Label>Bus No.</Form.Label>
-                  <Form.Control type="text" ref={searchRef} required />
-                </Form.Group>
-                <div className="mb-3">
-                  {error1 && <Alert variant="danger">{error1}</Alert>}
-                  <>{bninfo}</>
-                </div>
-                <Button variant="primary" type="submit">
-                  Submit
-                </Button>
-              </Form>
-            </div>
-          </Card.Body>
-        </Card>
-      </div>
-    </Container>
+    <>
+      <Header />
+      <Container
+        className="d-flex align-items-center justify-content-center"
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="w-100" style={{ maxWidth: "400px" }}>
+          <Card>
+            <Card.Body>
+              <div className="d-flex flex-column align-items-center justify-content-center">
+                <Form onSubmit={handleSubmit}>
+                  <Form.Group id="text">
+                    <Form.Label>Bus No.</Form.Label>
+                    <Form.Control type="text" ref={searchRef} required />
+                  </Form.Group>
+                  <div className="mb-3">
+                    {error1 && <Alert variant="danger">{error1}</Alert>}
+                    <>{bninfo}</>
+                  </div>
+                  <Button variant="primary" type="submit">
+                    Submit
+                  </Button>
+                </Form>
+              </div>
+            </Card.Body>
+          </Card>
+        </div>
+      </Container>
+    </>
   );
 }

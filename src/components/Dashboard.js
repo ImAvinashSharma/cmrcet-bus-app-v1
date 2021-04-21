@@ -1,63 +1,9 @@
-import React, { useState } from "react";
-import { Button, Alert } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
+import React from "react";
+import Header from "./Header";
 export default function Dashboard() {
-  const [error, setError] = useState("");
-
-  const { currentUser, logout } = useAuth();
-  const history = useHistory();
-
-  async function handleLogout() {
-    setError("");
-    try {
-      await logout();
-      history.push("/login");
-    } catch {
-      setError("Failed to logout");
-    }
-  }
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <Link aclassName="navbar-brand" to="/">
-            CMRCET BUS APP
-          </Link>
-
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/home"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="bus-route">
-                  Bus Route
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="d-flex flex-row-reverse">
-            <Button className="btn btn-dark btn-sm" onClick={handleLogout}>
-              Log Out
-            </Button>
-            <Link to="/update-profile" className="btn btn-primary btn-sm mr-3">
-              Update Profile
-            </Link>
-            <div className="ml-5 mr-3">
-              <strong>email: </strong>
-              {currentUser.email}
-            </div>
-            {error && <Alert variant="danger">{error}</Alert>}
-          </div>
-        </div>
-      </nav>
+      <Header />
       <h2 className="text-center mt-4 mb-4">
         <strong>Profile</strong>
       </h2>
