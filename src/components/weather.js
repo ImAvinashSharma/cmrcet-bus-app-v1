@@ -36,7 +36,7 @@ export default function Weather() {
         <p>city not found</p>
       ) : (
         <div>
-          <p>{city.temp} &#8451;</p>
+          {city.temp} <sup>&#8451;</sup>
         </div>
       )}
 

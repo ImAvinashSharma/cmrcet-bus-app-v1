@@ -17,7 +17,7 @@ export default function BussRoute() {
   function handleSubmit(e) {
     e.preventDefault();
     setError1("");
-    const bn = searchRef.current.value;
+    let bn = searchRef.current.value;
     if (isNumeric(bn)) {
       if (bn <= 61) {
         const binfo = [
@@ -38,6 +38,7 @@ export default function BussRoute() {
           <br />,
           "Capacity ➡️ " + data[bn].Cpty
         ];
+        bn = 0;
         setBninfo(binfo);
       } else {
         const rm = [""];
