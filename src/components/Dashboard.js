@@ -11,7 +11,7 @@ export default function Dashboard() {
       <Footer />
       <>
         <bussData />
-        <div>
+        {/**<div>
           <input
             style={{ transform: "rotate(90deg)" }}
             type="range"
@@ -23,7 +23,7 @@ export default function Dashboard() {
           <label for="customRange1" className="form-label">
             distance
           </label>
-        </div>
+        </div> */}
       </>
     </>
   );
