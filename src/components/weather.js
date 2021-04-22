@@ -32,7 +32,13 @@ export default function Weather() {
           <h1>{search}</h1>
         </div>
       </div>
-      {!city ? <p>city not found</p> : <div>{city.temp}</div>}
+      {!city ? (
+        <p>city not found</p>
+      ) : (
+        <div>
+          <p>{city.temp} &#8451;</p>
+        </div>
+      )}
 
       <Footer />
     </>
