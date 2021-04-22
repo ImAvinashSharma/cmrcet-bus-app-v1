@@ -7,7 +7,8 @@ export default function Weather() {
   const [search, setSearch] = useState("Hyderabad");
   useEffect(() => {
     const fetchApi = async () => {
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=70c6577339178b975173fb418ed82ce4`;
+      const APIkey = process.env.REACT_APP_APIID;
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=${APIkey}`;
       const response = await fetch(url);
       const JsonRes = await response.json();
       setCity(JsonRes.main);
