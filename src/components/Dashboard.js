@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import Footer from "./Footer";
 export default function Dashboard() {
   return (
     <>
@@ -7,23 +8,7 @@ export default function Dashboard() {
       <h2 className="text-center mt-4 mb-4">
         <strong>Profile</strong>
       </h2>
-      <footer>
-        <div
-          style={{
-            position: "fixed",
-            left: "0",
-            bottom: "0",
-            width: "100%",
-            backgroundColor: "#212529",
-            color: "#ffffff",
-            textAlign: "center"
-          }}
-        >
-          <p className="text-white text-center mt-3">
-            © 2020 CMR College of Engineering &amp; Technology
-          </p>
-        </div>
-      </footer>
+      <Footer />
       <>
         <bussData />
         <div>

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import bussData from "./busNo.json";
 import { Button, Alert, Form, Container, Card } from "react-bootstrap";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function BussRoute() {
   const [error1, setError1] = useState("");
@@ -39,7 +40,8 @@ export default function BussRoute() {
         ];
         setBninfo(binfo);
       } else {
-        setData("");
+        const rm = [""];
+        setData(rm);
         setError1("Error Buss No does not exist");
       }
     } else {
@@ -76,6 +78,7 @@ export default function BussRoute() {
           </Card>
         </div>
       </Container>
+      <Footer />
     </>
   );
 }
