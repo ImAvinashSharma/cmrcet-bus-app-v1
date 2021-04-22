@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 import EmailIcon from "@material-ui/icons/Email";
+import PaymentIcon from "@material-ui/icons/Payment";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
 
 export default function Header() {
@@ -47,6 +48,11 @@ export default function Header() {
               <li className="nav-item">
                 <Link className="nav-link" to="weather">
                   <WbSunnyIcon /> Weather
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="#">
+                  <PaymentIcon /> bus fees
                 </Link>
               </li>
             </ul>
