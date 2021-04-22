@@ -1,5 +1,7 @@
 # `CMRCET BUS APP`
 
+Made with ❤️ by Avinash Sharma
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -50,7 +52,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### Code Splitting
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
 
 ### Advanced Configuration
 
