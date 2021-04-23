@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-
+import "./Weather.css";
 export default function Weather() {
   const [city, setCity] = useState(null);
   const [search, setSearch] = useState("Hyderabad");
@@ -17,30 +15,46 @@ export default function Weather() {
   }, [search]);
   return (
     <>
-      <Header />
-      <div className="box">
-        <div className="inputData">
+      <div
+        className="d-flex flex-column align-items-center justify-content-center"
+        style={{ minHeight: "10vh" }}
+      >
+        <h2>Weather</h2>
+        <div className="input flex-nowrap">
           <input
+            maxlength="20"
+            size="20"
             type="search"
-            className=""
+            className="form-control"
             value={search}
             onChange={e => {
               e.preventDefault();
               setSearch(e.target.value);
             }}
           />
-          <h1>{search}</h1>
         </div>
+        <h1>{search}</h1>
       </div>
       {!city ? (
         <p>city not found</p>
       ) : (
-        <div>
-          {city.temp} <sup>&#8451;</sup>
+        <div
+          className="d-flex flex-column align-items-center justify-content-center"
+          style={{ minHeight: "27.2vh" }}
+        >
+          <h1>
+            {city.temp} <sup>&#8451;</sup>
+          </h1>
+          <h3>
+            Min : {city.temp_min}
+            <sup>&#8451;</sup>
+          </h3>
+          <h3>
+            Max : {city.temp_max}
+            <sup>&#8451;</sup>
+          </h3>
         </div>
       )}
-
-      <Footer />
     </>
   );
 }

@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import { Button, Alert } from "react-bootstrap";
-import HomeIcon from "@material-ui/icons/Home";
+import { Button, Alert, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
-import EmailIcon from "@material-ui/icons/Email";
-import PaymentIcon from "@material-ui/icons/Payment";
-import WbSunnyIcon from "@material-ui/icons/WbSunny";
 
 export default function Header() {
   const [error, setError] = useState("");
@@ -25,52 +20,55 @@ export default function Header() {
     }
   }
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link
-                  className="nav-link active pl-0 pr-1 ml-0"
-                  aria-current="page"
-                  to="/"
-                >
-                  <HomeIcon />
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="bus-route">
-                  <DirectionsBusIcon /> Bus Route
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="weather">
-                  <WbSunnyIcon /> Weather
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/fees">
-                  <PaymentIcon /> bus fees
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="d-flex flex-row-reverse">
-            <Button className="btn btn-dark btn-sm" onClick={handleLogout}>
+    <>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="dark"
+        variant="dark"
+        sticky="top"
+      >
+        <Navbar.Brand as={Link} to="/">
+          Home
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link as={Link} to="fees">
+              Fees
+            </Nav.Link>
+            <NavDropdown title="More" id="collasible-nav-dropdown">
+              <NavDropdown.Item as={Link} to="bus-route">
+                Bus Route
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="weather">
+                Weather
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="Complaint">
+                Complaint
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="https://cmrcet.ac.in/">
+                CMRCET
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link as={Link} to="#">
+              {currentUser.email}
+            </Nav.Link>
+            <Nav.Link as={Link} to="update-profile">
+              Update Profile
+            </Nav.Link>
+            <Button variant="outline-info" onClick={handleLogout}>
               Log Out
             </Button>
-            <Link to="/update-profile" className="link-primary mr-3">
-              Update Profile
-            </Link>
-            <div className="ml-2 mr-3">{currentUser.email}</div>
-            <EmailIcon />
-            {error && <Alert variant="danger">{error}</Alert>}
-          </div>
-        </div>
-      </nav>
-    </div>
+            <Nav.Link as={Link} to="#">
+              {error && <Alert variant="danger">{error}</Alert>}
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </>
   );
 }

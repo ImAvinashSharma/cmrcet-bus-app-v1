@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
-import bussData from "./busNo.json";
-import { Button, Alert, Form, Container, Card } from "react-bootstrap";
-import Header from "./Header";
-import Footer from "./Footer";
+import bussData from "./assets/busNo.json";
+import { Button, Alert, Form } from "react-bootstrap";
 
 export default function BussRoute() {
   const [error1, setError1] = useState("");
@@ -52,34 +50,25 @@ export default function BussRoute() {
   }
   return (
     <>
-      <Header />
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "90vh" }}
+      <div
+        className="d-flex flex-column align-items-center justify-content-center"
+        style={{ minHeight: "43vh" }}
       >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
-          <Card>
-            <Card.Body>
-              <div className="d-flex flex-column align-items-center justify-content-center">
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group id="text">
-                    <Form.Label>Bus No.</Form.Label>
-                    <Form.Control type="text" ref={searchRef} required />
-                  </Form.Group>
-                  <div className="mb-3">
-                    {error1 && <Alert variant="danger">{error1}</Alert>}
-                    <>{bninfo}</>
-                  </div>
-                  <Button variant="primary" type="submit">
-                    Submit
-                  </Button>
-                </Form>
-              </div>
-            </Card.Body>
-          </Card>
-        </div>
-      </Container>
-      <Footer />
+        <h2>Bus Information</h2>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group id="text">
+            <Form.Label>Bus No.</Form.Label>
+            <Form.Control type="text" ref={searchRef} required />
+          </Form.Group>
+          <div className="mb-3">
+            {error1 && <Alert variant="danger">{error1}</Alert>}
+            <>{bninfo}</>
+          </div>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
     </>
   );
 }
