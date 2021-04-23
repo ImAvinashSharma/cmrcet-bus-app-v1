@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Weather.css";
 export default function Weather() {
   const [city, setCity] = useState(null);
   const [search, setSearch] = useState("Hyderabad");
