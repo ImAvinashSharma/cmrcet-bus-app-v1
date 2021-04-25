@@ -12,9 +12,17 @@ export default function Dashboard() {
       <h2 className="text-center mt-4 mb-4">
         <strong>Profile</strong>
       </h2>
-      <Container>
+      <Container
+        style={{
+          color: "#ffffff"
+        }}
+      >
         <CardDeck>
-          <Card>
+          <Card
+            style={{
+              backgroundColor: "#2b2a2a"
+            }}
+          >
             <Card.Text>
               <BusRoute />
             </Card.Text>
@@ -22,7 +30,11 @@ export default function Dashboard() {
               <small className="text-muted">Last updated 3 mins ago</small>
             </Card.Footer>
           </Card>
-          <Card>
+          <Card
+            style={{
+              backgroundColor: "#2b2a2a"
+            }}
+          >
             <Card.Text>
               <Weather />
             </Card.Text>

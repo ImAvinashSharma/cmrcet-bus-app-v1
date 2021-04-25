@@ -44,7 +44,7 @@ export default function Header() {
               <NavDropdown.Item as={Link} to="weather">
                 Weather
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="Complaint">
+              <NavDropdown.Item as={Link} to="complaint">
                 Complaint
               </NavDropdown.Item>
               <NavDropdown.Divider />

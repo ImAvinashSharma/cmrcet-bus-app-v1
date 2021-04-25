@@ -12871,6 +12871,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-bootstrap: ^1.5.2
     react-dom: ^17.0.2
+    react-firebase-hooks: ^3.0.4
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3
     web-vitals: ^1.0.1
@@ -13016,6 +13017,16 @@ fsevents@^1.2.7:
   version: 6.0.9
   resolution: "react-error-overlay@npm:6.0.9"
   checksum: 5e971284cc76af684940d78a91c8eac639f16b3b9500a03423ae177392cdaf320788b9c9112f58a2dde4f5a80688acdbc89334827354e95493244968af94830f
+  languageName: node
+  linkType: hard
+
+"react-firebase-hooks@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "react-firebase-hooks@npm:3.0.4"
+  peerDependencies:
+    firebase: ">= 8.0.0"
+    react: ">= 16.8.0"
+  checksum: e1a1207062443cd60d0bf74651faea73a4680e91f01306f7be975cc029317daf85deeea07e85f486c9f6973085f7c6e5463300e4afa4305623d080b526c0388e
   languageName: node
   linkType: hard
 
