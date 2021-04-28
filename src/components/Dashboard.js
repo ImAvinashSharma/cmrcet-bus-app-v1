@@ -9,13 +9,19 @@ export default function Dashboard() {
   // eslint-disable-next-line
   const [type, setType] = useState("danger");
   // eslint-disable-next-line
+  const [alert, setAlert] = useState(true);
+  // eslint-disable-next-line
   const [message, setMessage] = useState(
     "Oops! You have not paid the fees yet!"
   );
   return (
     <>
       <Header />
-      <AlertDismissibleExample type={type} message={message} />
+      {alert ? (
+        <></>
+      ) : (
+        <AlertDismissibleExample type={type} message={message} />
+      )}
       <h2 className="text-center mt-4 mb-4">
         <strong>Profile</strong>
       </h2>
