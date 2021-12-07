@@ -3,7 +3,6 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { auth } from "../firebase";
-// import "./Complaint.css";
 
 const firestore = firebase.firestore();
 export default function Complaint() {
@@ -89,8 +88,7 @@ function ChatRoom() {
           flexDirection: "column"
         }}
       >
-        {messages &&
-          messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
         <span ref={dummy}></span>
       </main>
 
@@ -125,11 +123,7 @@ function ChatRoom() {
           }}
         />
 
-        <button
-          type="submit"
-          disabled={!formValue}
-          style={{ width: "20%", backgroundColor: "rgb(56, 56, 143)" }}
-        >
+        <button type="submit" disabled={!formValue} style={{ width: "20%", backgroundColor: "rgb(56, 56, 143)" }}>
           🕊️
         </button>
       </form>

@@ -1,5 +1,1 @@
-[
-  { "rno": "1", "id": "19H51A0597", "status": true },
-  { "rno": "2", "id": "19H51A0596", "status": true },
-  { "rno": "3", "id": "19H51A0598", "status": false }
-]
+[{ "19H51A0597": true, "19H51A0596": true, "19H51A0598": false }]

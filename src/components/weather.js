@@ -4,7 +4,7 @@ export default function Weather() {
   const [search, setSearch] = useState("Hyderabad");
   useEffect(() => {
     const fetchApi = async () => {
-      const APIkey = process.env.REACT_APP_APIID;
+      const APIkey = "70c6577339178b975173fb418ed82ce4";
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=${APIkey}`;
       const response = await fetch(url);
       const JsonRes = await response.json();
@@ -14,10 +14,7 @@ export default function Weather() {
   }, [search]);
   return (
     <>
-      <div
-        className="d-flex flex-column align-items-center justify-content-center"
-        style={{ minHeight: "10vh" }}
-      >
+      <div className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: "10vh" }}>
         <h2>Weather</h2>
         <div className="input flex-nowrap">
           <input
@@ -37,10 +34,7 @@ export default function Weather() {
       {!city ? (
         <p>city not found</p>
       ) : (
-        <div
-          className="d-flex flex-column align-items-center justify-content-center"
-          style={{ minHeight: "27.2vh" }}
-        >
+        <div className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: "27.2vh" }}>
           <h1>
             {city.temp} <sup>&#8451;</sup>
           </h1>

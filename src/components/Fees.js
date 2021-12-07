@@ -12,13 +12,13 @@ export default function Fees() {
   function handleSubmit(e) {
     e.preventDefault();
     setError1("");
-    let bn = searchRef.current.value - 1;
-    if (bn < 3) {
-      if (data[bn].status === true) {
-        const binfo = ["Paid  ➡️ ", data[bn].id];
+    let rno = searchRef.current.value;
+    if (rno.length === 9) {
+      if (data[rno] === true) {
+        const binfo = ["Paid  ➡️ ", rno];
         setpayinfo(binfo);
       } else {
-        const binfo = ["Not Paid  ➡️ ", data[bn].id];
+        const binfo = ["Not Paid  ➡️ ", rno];
         setData(null);
         setError1(binfo);
       }
@@ -29,10 +29,7 @@ export default function Fees() {
   return (
     <>
       <Header />
-      <div
-        className="d-flex flex-column align-items-center justify-content-center"
-        style={{ minHeight: "43vh" }}
-      >
+      <div className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: "43vh" }}>
         <h2>Bus Information</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group id="text">
