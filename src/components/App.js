@@ -2,6 +2,7 @@ import Signup from "./Signup";
 import BusRoute from "./BusRoute";
 import Weather from "./Weather";
 import Complaint from "./Complaint";
+import BusInfo from "./BusInfo";
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "./Dashboard";
@@ -23,6 +24,7 @@ function App() {
               <PrivateRoute path="/weather" component={Weather} />
               <PrivateRoute path="/fees" component={Fees} />
               <PrivateRoute path="/complaint" component={Complaint} />
+              <PrivateRoute path="/businfo" component={BusInfo} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />

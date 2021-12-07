@@ -13,8 +13,8 @@ export default function Fees() {
     e.preventDefault();
     setError1("");
     let rno = searchRef.current.value;
-    if (rno.length === 9) {
-      if (data[rno] === true) {
+    if (rno.length === 10) {
+      if (data[0][rno] === true && data[0][rno] !== null) {
         const binfo = ["Paid  ➡️ ", rno];
         setpayinfo(binfo);
       } else {
