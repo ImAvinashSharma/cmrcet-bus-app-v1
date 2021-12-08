@@ -30,15 +30,17 @@ export default function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link as={Link} to="fees">
-              Fees
+              FEES
             </Nav.Link>
-            {
+            {auth.currentUser.uid === "QFpi0G7XF5VB1sIWnHWTBzTO9rR2" ? (
+              <Nav.Link as={Link} to="/businfo">
+                BUS STATUS UPDATE
+              </Nav.Link>
+            ) : (
+              <></>
+            )}
 
-            <Nav.Link as={Link} to="">
-            </Nav.Link>
-            }
-
-            <NavDropdown title="More" id="collasible-nav-dropdown">
+            <NavDropdown title="MORE" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="bus-route">
                 Bus Route
               </NavDropdown.Item>
