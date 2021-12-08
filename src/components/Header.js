@@ -3,6 +3,7 @@ import { Button, Alert, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { auth } from "../firebase";
 
 export default function Header() {
   const [error, setError] = useState("");
@@ -21,13 +22,7 @@ export default function Header() {
   }
   return (
     <>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        bg="dark"
-        variant="dark"
-        sticky="top"
-      >
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
         <Navbar.Brand as={Link} to="/">
           Home
         </Navbar.Brand>
@@ -37,6 +32,12 @@ export default function Header() {
             <Nav.Link as={Link} to="fees">
               Fees
             </Nav.Link>
+            {
+
+            <Nav.Link as={Link} to="">
+            </Nav.Link>
+            }
+
             <NavDropdown title="More" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="bus-route">
                 Bus Route
@@ -48,9 +49,7 @@ export default function Header() {
                 Complaint
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="https://cmrcet.ac.in/">
-                CMRCET
-              </NavDropdown.Item>
+              <NavDropdown.Item href="https://cmrcet.ac.in/">CMRCET</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>

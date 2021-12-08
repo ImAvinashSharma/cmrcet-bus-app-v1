@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import BusRoute from "./BusRoute";
 import Weather from "./Weather";
+import Updates from "./Updates";
 import { Card, CardDeck, Alert, Container, Button } from "react-bootstrap";
 
 export default function Dashboard() {
@@ -11,17 +12,11 @@ export default function Dashboard() {
   // eslint-disable-next-line
   const [alert, setAlert] = useState(true);
   // eslint-disable-next-line
-  const [message, setMessage] = useState(
-    "Oops! You have not paid the fees yet!"
-  );
+  const [message, setMessage] = useState("Oops! You have not paid the fees yet!");
   return (
     <>
       <Header />
-      {alert ? (
-        <></>
-      ) : (
-        <AlertDismissibleExample type={type} message={message} />
-      )}
+      {alert ? <></> : <AlertDismissibleExample type={type} message={message} />}
       <h2 className="text-center mt-4 mb-4">
         <strong>Profile</strong>
       </h2>
@@ -57,22 +52,8 @@ export default function Dashboard() {
           </Card>
         </CardDeck>
       </Container>
+      <Updates />
       <Footer />
-      <>
-        {/**<div>
-          <input
-            style={{ transform: "rotate(90deg)" }}
-            type="range"
-            className="form-range"
-            id="customRange1"
-            min="0"
-            max="50"
-          ></input>
-          <label for="customRange1" className="form-label">
-            distance
-          </label>
-        </div> */}
-      </>
     </>
   );
 }
@@ -82,12 +63,7 @@ function AlertDismissibleExample({ type, message }) {
 
   if (show) {
     return (
-      <Alert
-        variant={type}
-        onClose={() => setShow(false)}
-        dismissible
-        className="d-flex align-items-center justify-content-center"
-      >
+      <Alert variant={type} onClose={() => setShow(false)} dismissible className="d-flex align-items-center justify-content-center">
         <Alert.Heading>{message}</Alert.Heading>
       </Alert>
     );

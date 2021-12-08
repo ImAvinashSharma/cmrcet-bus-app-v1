@@ -9,8 +9,45 @@ const firestore = firebase.firestore();
 function BusInfo() {
   return (
     <div>
-      <h1>Bus Information</h1>
-      {<Helper />}
+      {auth.currentUser.uid === "QFpi0G7XF5VB1sIWnHWTBzTO9rR2" ? (
+        <>
+          <div
+            style={{
+              minHeight: "100vh",
+              backgroundColor: "#282c34",
+              maxWidth: "728px",
+              margin: "0 auto"
+            }}
+          >
+            <header
+              style={{
+                backgroundColor: "#181717",
+                height: "10vh",
+                minHeight: "50px",
+                color: "white",
+                position: "fixed",
+                width: "100%",
+                maxWidth: "728px",
+                top: "0",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                zIndex: "99",
+                padding: "10px",
+                boxSizing: "border-box"
+              }}
+            >
+              <h1 style={{ alignText: "center" }}>BUS INFORMATION (UPDATES)</h1>
+            </header>
+            <Helper />
+          </div>
+        </>
+      ) : (
+        <center style={{ color: "RED" }}>
+          <h1>ACCESS DENIED</h1>
+          <h3>403</h3>
+        </center>
+      )}
     </div>
   );
 }
@@ -26,9 +63,7 @@ function Helper() {
 
   const sendMessage = async e => {
     e.preventDefault();
-
     const { uid } = auth.currentUser;
-
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
