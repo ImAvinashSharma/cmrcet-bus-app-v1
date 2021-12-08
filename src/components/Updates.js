@@ -9,7 +9,9 @@ function Updates() {
   return (
     <Container
       style={{
-        marginTop: "1.5rem"
+        marginTop: "1.5rem",
+        marginBottom: "3rem",
+        padding: "1.6rem"
       }}
     >
       <Card

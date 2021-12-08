@@ -39,13 +39,7 @@ export default function Header() {
             ) : (
               <></>
             )}
-            {auth.currentUser.uid === "QFpi0G7XF5VB1sIWnHWTBzTO9rR2" ? (
-              <Nav.Link as={Link} to="https://cmrqr.vercel.app/">
-                SCAN
-              </Nav.Link>
-            ) : (
-              <></>
-            )}
+            {auth.currentUser.uid === "QFpi0G7XF5VB1sIWnHWTBzTO9rR2" ? <Nav.Link href="https://cmrqr.vercel.app/">SCAN</Nav.Link> : <></>}
             <NavDropdown title="MORE" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="bus-route">
                 Bus Route
